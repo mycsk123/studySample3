@@ -43,7 +43,7 @@ class ViewController: UIViewController, UIPickerViewDelegate {
     }
 
     //피커 뷰에게 컴포넌트의 수를 정수 값으로 넘겨주는 델리게이트 메서드
-    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+    func numberOfComponentsInPickerView(in pickerView: UIPickerView) -> Int{
         return PICKER_VIEW_COULUMN
     }
     

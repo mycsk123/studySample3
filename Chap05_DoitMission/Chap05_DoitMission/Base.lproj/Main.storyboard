@@ -40,7 +40,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-PV-hXN">
-                                <rect key="frame" x="23" y="39" width="152" height="205"/>
+                                <rect key="frame" x="23" y="39" width="336" height="205"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fvX-2Z-BFl"/>
