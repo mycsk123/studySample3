@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Chap08_Map
+//  Chap08_DoitMission
 //
-//  Created by kwon on 26/07/2017.
+//  Created by kwon on 28/07/2017.
 //  Copyright © 2017 kwon. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
-    //mapkit 추가
+    
     @IBOutlet weak var myMap: MKMapView!
     
     @IBOutlet weak var lbLocationinfo1: UILabel!
@@ -35,9 +35,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         //위치 보기 값 설정
         myMap.showsUserLocation = true
-        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,7 +71,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         goLocation(latitude: (pLocation?.coordinate.latitude)!, longitude: (pLocation?.coordinate.longitude)!, delta: 0.01)
         
         CLGeocoder().reverseGeocodeLocation(pLocation!, completionHandler: {
-        
+            
             (placemarks, error) -> Void in
             
             let pm = placemarks!.first
@@ -99,7 +98,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
 
+    
     @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
+        
         //세그먼트 컨트롤에서 만든 메뉴 개수만큼 인덱스값을 보유
         if sender.selectedSegmentIndex == 0{
             self.lbLocationinfo1.text = ""
@@ -116,7 +117,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.lbLocationinfo1.text = "보고 계신 위치"
             self.lbLocationinfo2.text = "이지스퍼블리싱 출판사"
         }
+        else if sender.selectedSegmentIndex == 3{
+            
+            setAnnotation(latitude: 35.173139, longitude: 129.071270, delta: 0.1, title: "양정역", subtitle: "부산광역시 양정2동")
+            self.lbLocationinfo1.text = "보고 계신 위치"
+            self.lbLocationinfo2.text = "양정역"
+        }
     }
+
 
 }
 
